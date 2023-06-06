@@ -47,68 +47,68 @@ Organization: { PUT YOUR ORGANIZATION NAME HERE }
 
 ## Feature Checklists
 
-ATM are provided from 4 different banks:
+- [ ] ATM are provided from 4 different banks:
 
-- [ ] BRI
-- [ ] BNI
-- [ ] Mandiri
-- [ ] BCA
+  - [ ] BRI
+  - [ ] BNI
+  - [ ] Mandiri
+  - [ ] BCA
 
-each having its own managed customer accounts and money stocks.
+  each having its own managed customer accounts and money stocks.
 
 - [ ] Every time a Customer accesses the ATM, they should input their account number and pin, before they are able to use its feature.
 
 - [ ] All Customers are able to use whichever ATM they please. However, there will be additional charge applied for criss-cross usage.
 
-Each ATM have the same set of currency nominals in Rupiah, and the same set of features:
+- [ ] Each ATM have the same set of currency nominals in Rupiah, and the same set of features:
 
-- [ ] Account Balance Information
+  - [ ] Account Balance Information
 
-  This feature shows current account's balance
+    This feature shows current account's balance
 
-- [ ] Money Withdrawal
+  - [ ] Money Withdrawal
 
-  This feature allows Customer to withdraw money from their registered account in certain Banks, with a custom withdraw amount
+    This feature allows Customer to withdraw money from their registered account in certain Banks, with a custom withdraw amount
 
-  This feature will tells Customer to take certain number of currency nominals in descending priority based on value, relative to the withdrawn amount; for example: 1x of Nominal C, 3x of Nominal B, 1x of Nominal A
+    This feature will tells Customer to take certain number of currency nominals in descending priority based on value, relative to the withdrawn amount; for example: 1x of Nominal C, 3x of Nominal B, 1x of Nominal A
 
-  This feature will finally shows remaining account's balance
+    This feature will finally shows remaining account's balance
 
-- [ ] Phone Credits Top-Up
+  - [ ] Phone Credits Top-Up
 
-  This feature allows Customer to top-up credit for inputed phone number, at these amount:
+    This feature allows Customer to top-up credit for inputed phone number, at these amount:
 
-  - [ ] Rp10.000,00
-  - [ ] Rp20.000,00
-  - [ ] Rp50.000,00
-  - [ ] Rp100.000,00
+    - [ ] Rp10.000,00
+    - [ ] Rp20.000,00
+    - [ ] Rp50.000,00
+    - [ ] Rp100.000,00
 
-  This feature will finally shows target phone number, topped-up amount, and remaining account's balance
+    This feature will finally shows target phone number, topped-up amount, and remaining account's balance
 
-- [ ] Electricity Bills Token
+  - [ ] Electricity Bills Token
 
-  This feature allows Customer to buy electricity bills token for inputed bill number, at these amount:
+    This feature allows Customer to buy electricity bills token for inputed bill number, at these amount:
 
-  - [ ] Rp50.000,00
-  - [ ] Rp100.000,00
-  - [ ] Rp200.000,00
-  - [ ] Rp500.000,00
+    - [ ] Rp50.000,00
+    - [ ] Rp100.000,00
+    - [ ] Rp200.000,00
+    - [ ] Rp500.000,00
 
-  This feature will then tells the Customer of the token, target bill number, and remaining account's balance
+    This feature will then tells the Customer of the token, target bill number, and remaining account's balance
 
-- [ ] Account Mutation (Fund Transfer)
+  - [ ] Account Mutation (Fund Transfer)
 
-  This feature allows Customer to transfer funds into certain account number on selected Banks
+    This feature allows Customer to transfer funds into certain account number on selected Banks
 
-  This feature will finally shows target Bank and account, transfered amount, and remaining account's balance
+    This feature will finally shows target Bank and account, transfered amount, and remaining account's balance
 
-and additionaly for BNI and Mandiri, both will have this feature:
+  and additionaly for BNI and Mandiri, both will have this feature:
 
-- [ ] Money Deposit
+  - [ ] Money Deposit
 
-  This feature allows Customer to deposit money into their account
+    This feature allows Customer to deposit money into their account
 
-  This feature will finally shows current account's balance
+    This feature will finally shows current account's balance
 
 ## Constraints
 

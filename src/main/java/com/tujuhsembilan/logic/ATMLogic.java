@@ -267,6 +267,7 @@ public class ATMLogic {
         targetBank = BankRepo.findBankByName(BankCompany.getByOrder(selection - 1).getName()).orElse(null);
         if (targetBank == null) {
           System.out.println("Bank doesn't exists");
+          return;
         }
       } else {
         printInvalid();

@@ -47,26 +47,26 @@ Organization: none, tbh
 
 ## Feature Checklists
 
-- [ ] ATM are provided from 4 different banks:
+- [x] ATM are provided from 4 different banks:
 
-  - [ ] BRI
-  - [ ] BNI
-  - [ ] Mandiri
-  - [ ] BCA
+  - [x] BRI
+  - [x] BNI
+  - [x] Mandiri
+  - [x] BCA
 
   each having its own managed customer accounts and money stocks.
 
-- [ ] Every time a Customer accesses the ATM, they should input their account number and pin, before they are able to use its feature.
+- [x] Every time a Customer accesses the ATM, they should input their account number and pin, before they are able to use its feature.
 
-- [ ] All Customers are able to use whichever ATM they please. However, there will be additional charge applied for criss-cross usage.
+- [x] All Customers are able to use whichever ATM they please. However, there will be additional charge applied for criss-cross usage.
 
-- [ ] Each ATM have the same set of currency nominals in Rupiah, and the same set of features:
+- [x] Each ATM have the same set of currency nominals in Rupiah, and the same set of features:
 
-  - [ ] Account Balance Information
+  - [x] Account Balance Information
 
     This feature shows current account's balance
 
-  - [ ] Money Withdrawal
+  - [x] Money Withdrawal
 
     This feature allows Customer to withdraw money from their registered account in certain Banks, with a custom withdraw amount
 
@@ -74,29 +74,29 @@ Organization: none, tbh
 
     This feature will finally shows remaining account's balance
 
-  - [ ] Phone Credits Top-Up
+  - [x] Phone Credits Top-Up
 
     This feature allows Customer to top-up credit for inputed phone number, at these amount:
 
-    - [ ] Rp10.000,00
-    - [ ] Rp20.000,00
-    - [ ] Rp50.000,00
-    - [ ] Rp100.000,00
+    - [x] Rp10.000,00
+    - [x] Rp20.000,00
+    - [x] Rp50.000,00
+    - [x] Rp100.000,00
 
     This feature will finally shows target phone number, topped-up amount, and remaining account's balance
 
-  - [ ] Electricity Bills Token
+  - [x] Electricity Bills Token
 
     This feature allows Customer to buy electricity bills token for inputed bill number, at these amount:
 
-    - [ ] Rp50.000,00
-    - [ ] Rp100.000,00
-    - [ ] Rp200.000,00
-    - [ ] Rp500.000,00
+    - [x] Rp50.000,00
+    - [x] Rp100.000,00
+    - [x] Rp200.000,00
+    - [x] Rp500.000,00
 
     This feature will then tells the Customer of the token, target bill number, and remaining account's balance
 
-  - [ ] Account Mutation (Fund Transfer)
+  - [x] Account Mutation (Fund Transfer)
 
     This feature allows Customer to transfer funds into certain account number on selected Banks
 
@@ -104,7 +104,7 @@ Organization: none, tbh
 
   and additionaly for BNI and Mandiri, both will have this feature:
 
-  - [ ] Money Deposit
+  - [x] Money Deposit
 
     This feature allows Customer to deposit money into their account
 
@@ -112,33 +112,33 @@ Organization: none, tbh
 
 ## Constraints
 
-- [ ] The ATM is assumed to be always active, and MUST NOT be able to be turned off
-- [ ] The ATM MUST only accept number as the input
-- [ ] In case of login failure, Customer MUST have a maximum of 3 retries, and further login attempt SHALL be blocked
-- [ ] Money stock on ATM MUST be finite
+- [x] The ATM is assumed to be always active, and MUST NOT be able to be turned off
+- [x] The ATM MUST only accept number as the input
+- [x] In case of login failure, Customer MUST have a maximum of 3 retries, and further login attempt SHALL be blocked
+- [x] Money stock on ATM MUST be finite
 
   The default amount of stocked money MUST be Rp25.000.000,00
-- [ ] Maximum amount per transaction MUST be Rp2.500.000,00
-- [ ] Maximum daily transaction per account MUST be Rp5.000.000,00
-- [ ] Any maximum expense limitation SHALL only applies on physical transaction, meaning virtual transaction like top-up and transfers MUST NOT be affected
-- [ ] Each account MUST have minimum residue balance of Rp10.000,00
-- [ ] The ATM MUST have these currency nominals:
+- [x] Maximum amount per transaction MUST be Rp2.500.000,00
+- [x] Maximum daily transaction per account MUST be Rp5.000.000,00
+- [x] Any maximum expense limitation SHALL only applies on physical transaction, meaning virtual transaction like top-up and transfers MUST NOT be affected
+- [x] Each account MUST have minimum residue balance of Rp10.000,00
+- [x] The ATM MUST have these currency nominals:
 
-  - [ ] Rp10.000,00
-  - [ ] Rp20.000,00
-  - [ ] Rp50.000,00
-  - [ ] Rp100.000,00
+  - [x] Rp10.000,00
+  - [x] Rp20.000,00
+  - [x] Rp50.000,00
+  - [x] Rp100.000,00
 
   There is no individual finite amount for these nominals, and all nominals is assumed to be always available on every ATMs
-- [ ] Money Withdrawal and Money Deposit feature SHALL only accept input for values that is multiples of 10.000
-- [ ] Phone number MUST be between 3 and 15 digits
-- [ ] Criss-cross transaction fee MUST be Rp2.500
-- [ ] Every errors and/or invalid inputs MUST shows proper messages
-- [ ] Every currency number that displayed MUST be formatted to Rupiah standard string, and MUST be spelled in Bahasa; for example:
+- [x] Money Withdrawal and Money Deposit feature SHALL only accept input for values that is multiples of 10.000
+- [x] Phone number MUST be between 3 and 15 digits
+- [x] Criss-cross transaction fee MUST be Rp2.500
+- [x] Every errors and/or invalid inputs MUST shows proper messages
+- [x] Every currency number that displayed MUST be formatted to Rupiah standard string, and MUST be spelled in Bahasa; for example:
 
   `Rp10.000,00`\
   `Sepuluh Ribu Rupiah`
-- [ ] Electricity bills token MUST be randomly or procedurally generated, with `{RANDOM_UUID}_{First 8 Digit from SHA_256 of (EPOCH_MILLIS)}_{AMOUNT_OF_BOUGHT_TOKEN}`; for example:
+- [x] Electricity bills token MUST be randomly or procedurally generated, with `{RANDOM_UUID}_{First 8 Digit from SHA_256 of (EPOCH_MILLIS)}_{AMOUNT_OF_BOUGHT_TOKEN}`; for example:
 
   `aaaa-bb-cc-ddd_2afcb452_50000`\
   if you bought a Rp50.000,00 token

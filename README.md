@@ -12,8 +12,8 @@ Please follow this instruction **before** you work on this project:
 ---
 
 ```plaintext
-Full Name:    { PUT YOUR NAME HERE }
-Organization: { PUT YOUR ORGANIZATION NAME HERE }
+Full Name:    Mochamad Seftikara Al Mayasir Soetiawarman
+Organization: none, tbh
 ```
 
 ---
@@ -149,11 +149,3 @@ Organization: { PUT YOUR ORGANIZATION NAME HERE }
 - It is RECOMMENDED to use advanced Java features and coding method, to get better points; for example: OOP, collection stream, proper data type, SOLID, modularism, etc.
 - Beautification of the output SHALL NOT have bonus points, so you SHOULD focus on implementing features instead
 - This project SHALL NOT connect to database at this point, so you MUST implement data store on underlying `data.repository` package
-
----
-
-## Review Form
-
-_Please insert you review here, only after you finished this project, either on completed or due to time-limit!_
-
-> ```{ WRITE YOUR REVIEW HERE }```

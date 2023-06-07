@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class BankCompany {
+public enum BankCompany {
   BRI("BRI"),
   BNI("BNI"),
   MANDIRI("Mandiri"),

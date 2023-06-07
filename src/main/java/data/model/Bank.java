@@ -40,11 +40,14 @@ public class Bank {
   }
 
   public Optional<Customer> findCustomerByAccount(String account) {
-    return customers.stream().filter(item -> account.equals(item.getAccount())).findAny();
+    return customers.stream()
+        .filter(item -> account.equals(item.getAccount()))
+        .findAny();
   }
 
   public Set<Transaction> findAllTransactionsByAccount(String account) {
-    return transactions.stream().filter(item -> account.equals(item.getCustomer().getAccount()))
+    return transactions.stream()
+        .filter(item -> account.equals(item.getCustomer().getAccount()))
         .collect(Collectors.toSet());
   }
 }

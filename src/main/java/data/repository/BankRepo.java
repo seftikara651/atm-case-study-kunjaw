@@ -1,10 +1,12 @@
 package data.repository;
 
 import java.math.BigDecimal;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import data.constant.BankCompany;
 import data.model.Bank;
@@ -15,76 +17,90 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.NONE)
 public class BankRepo {
 
-        private static final long DEFAULT_DAILY_EXPENSE = 2_500_000;
-        private static final long DEFAULT_WITHDRAWAL_LIMIT = 5_000_000;
+  private static final long DEFAULT_DAILY_EXPENSE = 5_000_000;
+  private static final long DEFAULT_WITHDRAWAL_LIMIT = 2_500_000;
 
-    private static final Set<Bank> store = new HashSet<>();
-    static {
-        Bank bri = Bank.builder()
-                .id(UUID.randomUUID().toString())
-                        .name(BankCompany.BRI.getName())
-                        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
-                        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
-                .build();
-        store.add(bri);
-        bri.getCustomers().add(Customer.builder()
-                .id(UUID.randomUUID().toString())
-                .account("111111111")
-                .pin("111111")
-                .fullName("Nasabah BRI 1")
-                .balance(BigDecimal.valueOf(5_000_000))
-                .build());
+  private static final Set<Bank> store = new HashSet<>();
+  static {
+    Bank bri = Bank.builder()
+        .id(UUID.randomUUID().toString())
+        .name(BankCompany.BRI.getName())
+        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
+        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
+        .build();
+    store.add(bri);
+    bri.getCustomers().add(Customer.builder()
+        .id(UUID.randomUUID().toString())
+        .account("111111111")
+        .pin("111111")
+        .fullName("Nasabah BRI 1")
+        .balance(BigDecimal.valueOf(5_000_000))
+        .build());
 
-        Bank bni = Bank.builder()
-                .id(UUID.randomUUID().toString())
-                        .name(BankCompany.BNI.getName())
-                .depositFeature(true)
-                        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
-                        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
-                .build();
-        store.add(bni);
-        bri.getCustomers().add(Customer.builder()
-                .id(UUID.randomUUID().toString())
-                .account("222222222")
-                .pin("222222")
-                .fullName("Nasabah BNI 1")
-                .balance(BigDecimal.valueOf(3_000_000))
-                .build());
+    Bank bni = Bank.builder()
+        .id(UUID.randomUUID().toString())
+        .name(BankCompany.BNI.getName())
+        .depositFeature(true)
+        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
+        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
+        .build();
+    store.add(bni);
+    bni.getCustomers().add(Customer.builder()
+        .id(UUID.randomUUID().toString())
+        .account("222222222")
+        .pin("222222")
+        .fullName("Nasabah BNI 1")
+        .balance(BigDecimal.valueOf(3_000_000))
+        .build());
 
-        Bank mandiri = Bank.builder()
-                .id(UUID.randomUUID().toString())
-                        .name(BankCompany.MANDIRI.getName())
-                .depositFeature(true)
-                        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
-                        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
-                .build();
-        store.add(mandiri);
-        mandiri.getCustomers().add(Customer.builder()
-                .id(UUID.randomUUID().toString())
-                .account("333333333")
-                .pin("333333")
-                .fullName("Nasabah Mandiri 1")
-                .balance(BigDecimal.valueOf(1_500_000))
-                .build());
+    Bank mandiri = Bank.builder()
+        .id(UUID.randomUUID().toString())
+        .name(BankCompany.MANDIRI.getName())
+        .depositFeature(true)
+        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
+        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
+        .build();
+    store.add(mandiri);
+    mandiri.getCustomers().add(Customer.builder()
+        .id(UUID.randomUUID().toString())
+        .account("333333333")
+        .pin("333333")
+        .fullName("Nasabah Mandiri 1")
+        .balance(BigDecimal.valueOf(15_000_000))
+        .build());
 
-        Bank bca = Bank.builder()
-                .id(UUID.randomUUID().toString())
-                        .name(BankCompany.BCA.getName())
-                        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
-                        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
-                .build();
-        store.add(bca);
-        bca.getCustomers().add(Customer.builder()
-                .id(UUID.randomUUID().toString())
-                .account("444444444")
-                .pin("444444")
-                .fullName("Nasabah BCA 1")
-                .balance(BigDecimal.valueOf(240_000))
-                .build());
-    }
+    Bank bca = Bank.builder()
+        .id(UUID.randomUUID().toString())
+        .name(BankCompany.BCA.getName())
+        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
+        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
+        .build();
+    store.add(bca);
+    bca.getCustomers().add(Customer.builder()
+        .id(UUID.randomUUID().toString())
+        .account("444444444")
+        .pin("444444")
+        .fullName("Nasabah BCA 1")
+        .balance(BigDecimal.valueOf(240_000))
+        .build());
+  }
 
-    public static Optional<Bank> findBankByName(String name) {
-        return store.stream().filter(item -> name.equals(item.getName())).findAny();
-    }
+  public static Optional<Bank> findBankByName(String name) {
+    return store.stream().filter(item -> name.equals(item.getName())).findAny();
+  }
+
+  public static Optional<Bank> findBankByCustomer(Customer customer) {
+    return store.stream()
+        .filter(item -> item.getCustomers().stream()
+            .anyMatch(storedCustomer -> storedCustomer.getId().equals(customer.getId())))
+        .findAny();
+  }
+
+  public static Set<Customer> findAllCustomers() {
+    return store.stream()
+        .map(Bank::getCustomers)
+        .flatMap(Collection::stream)
+        .collect(Collectors.toSet());
+  }
 
 }

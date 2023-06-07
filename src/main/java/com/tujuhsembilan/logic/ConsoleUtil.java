@@ -1,7 +1,10 @@
 package com.tujuhsembilan.logic;
 
+import java.util.Collection;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
+
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.NONE)
 public class ConsoleUtil {
@@ -25,17 +28,58 @@ public class ConsoleUtil {
     printDivider('=');
   }
 
-  public static void delay(int seconds) {
+  public static String nextLine() {
+    return in.nextLine();
+  }
+
+  public static Integer nextInt() {
     try {
-      TimeUnit.SECONDS.sleep(seconds);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-      Thread.currentThread().interrupt();
+      return Integer.parseInt(nextLine());
+    } catch (NumberFormatException e) {
+      System.out.println("Only number input are allowed");
+      return -1;
+    }
+  }
+
+  public static Long nextLong() {
+    try {
+      return Long.parseLong(nextLine());
+    } catch (NumberFormatException e) {
+      System.out.println("Only number input are allowed");
+      return -1L;
     }
   }
 
   public static void delay() {
-    delay(3);
+    System.out.print("\nPress enter to continue...");
+    nextLine();
+  }
+
+  public static void printInvalid() {
+    System.out.println("Invalid input");
+    delay();
+  }
+
+  public static Integer menuSelection(Collection<String> menus, boolean allowExit) {
+    printClear();
+    printDivider();
+    int num = 1;
+    for (String menu : menus) {
+      System.out.println(" " + num + ". " + menu);
+      num++;
+    }
+    if (allowExit) {
+      printDivider('-');
+      System.out.println(" 0. EXIT");
+    }
+    printDivider();
+
+    System.out.print(" > ");
+    return nextInt();
+  }
+
+  public static Integer menuSelection(Collection<String> menus) {
+    return menuSelection(menus, true);
   }
 
 }

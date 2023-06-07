@@ -21,14 +21,22 @@ public class Customer {
 
   private BigDecimal balance;
 
-  private Integer invalidTries;
+  @Builder.Default
+  private Integer invalidTries = 0;
 
-  /**
-   * Use this function to add balance to Customer
-   *
-   * @param amount
-   */
+  public void recordFailure() {
+    this.invalidTries += 1;
+  }
+
+  public boolean isBlocked() {
+    return this.invalidTries >= 3;
+  }
+
   public void add(BigDecimal amount) {
     this.balance = this.balance.add(amount);
+  }
+
+  public void subtract(BigDecimal amount) {
+    this.balance = this.balance.subtract(amount);
   }
 }

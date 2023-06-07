@@ -21,11 +21,10 @@ public class ATM {
 
   private Bank bank;
 
-  /**
-   * Use this function to subtract balance to ATM
-   *
-   * @param amount
-   */
+  public void add(BigDecimal amount) {
+    this.balance = this.balance.add(amount);
+  }
+
   public void subtract(BigDecimal amount) {
     this.balance = this.balance.subtract(amount);
   }

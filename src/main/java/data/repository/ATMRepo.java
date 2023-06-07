@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.NONE)
 public class ATMRepo {
 
-  private static final long DEFAULT_ATM_BALANCE = 15_000_000;
+  private static final long DEFAULT_ATM_BALANCE = 25_000_000;
 
   private static final Set<ATM> store = new HashSet<>();
   static {
